@@ -9,7 +9,7 @@
         "sourceMap": false,
         "module": "system",
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": false
+        "emitDecoratorMetadata": true
     },
     "filesGlob": [
         "./**/*.ts",

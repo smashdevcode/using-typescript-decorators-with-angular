@@ -6,13 +6,8 @@ TODO
 
 
 
-    Work up example of class decorator
-
-
-
-
-    Work up example of metadata API
     Work up demos of decorator library
+
     Work up JS Object demos
 
 
