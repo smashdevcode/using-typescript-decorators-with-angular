@@ -6,11 +6,7 @@ TODO
 
 
 
-    Work up demos of decorator library
-
     Work up JS Object demos
-
-
 
 
 
