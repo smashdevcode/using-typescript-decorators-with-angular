@@ -18,9 +18,9 @@
         "!./typings/main/**/*.d.ts"
     ],
     "files": [
+        "./app/log-decorator.ts",
         "./app/main.ts",
-        "./app/method-decorator-log.ts",
-        "./app/method-decorator.ts"
+        "./app/my-class.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

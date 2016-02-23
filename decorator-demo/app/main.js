@@ -1,15 +1,17 @@
-System.register(['./method-decorator'], function(exports_1) {
+System.register(['./my-class'], function(exports_1) {
     "use strict";
-    var method_decorator_1;
-    var myClass;
+    var my_class_1;
+    var myClass, myProp;
     return {
         setters:[
-            function (method_decorator_1_1) {
-                method_decorator_1 = method_decorator_1_1;
+            function (my_class_1_1) {
+                my_class_1 = my_class_1_1;
             }],
         execute: function() {
-            myClass = new method_decorator_1.MyClass();
-            myClass.myMethod('testing', 1);
+            myClass = new my_class_1.MyClass('property value');
+            myClass.myProp = 'new property value';
+            myProp = myClass.myProp;
+            myClass.myMethod('parameter value', 1);
         }
     }
 });

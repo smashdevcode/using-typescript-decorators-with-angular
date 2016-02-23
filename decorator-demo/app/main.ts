@@ -1,4 +1,6 @@
-import {MyClass} from './method-decorator';
+import {MyClass} from './my-class';
 
-var myClass = new MyClass();
-myClass.myMethod('testing', 1);
+var myClass = new MyClass('property value');
+myClass.myProp = 'new property value';
+var myProp = myClass.myProp;
+myClass.myMethod('parameter value', 1);

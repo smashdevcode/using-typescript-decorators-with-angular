@@ -36,6 +36,21 @@ function decoratorExpression(target) {
 
 A decorator is just a function that gives you access to the target that needs to be decorated
 
+## Decorator Types
+
+* Class Decorator
+ * Accepts one argument: `target` (constructor function)
+ * Returns a constructor function that replaces original constructor function
+* Method Decorator
+ * Accepts three arguments: `target` (prototype), `key` (property name), and `value` (property descriptor for the given property)
+ * Returns a property descriptor that is used to update the original property definition
+* Property Decorator
+ * Accepts two arguments: `target` (prototype) and `key` (property name)
+ * Doesn't return a value
+* Parameter Decorator
+ * Accepts three arguments: `target` (prototype), `name` (method name), and `index` (index of the parameter being decorated)
+ * Returns a property descriptor that is used to update the original property definition
+
 ## Object.defineProperty
 
 Used to create object properties.
