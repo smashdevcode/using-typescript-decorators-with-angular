@@ -1,5 +1,6 @@
 
 // Decorators
+// https://github.com/jayphelps/core-decorators.js
 
 // For Properties and Methods
 
