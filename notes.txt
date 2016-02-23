@@ -20,15 +20,9 @@ TODO
     Put together slides
     Write up notes for demos
 
-
-
-
     Create ngForward demos
         Just write a version of my demo app using ngForward???
         Or create a small, simple demo???
-
-    Read Angular 2 documentation
-
 
 
 
