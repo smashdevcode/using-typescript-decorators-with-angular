@@ -12,43 +12,22 @@ TODO
 
 
 
-
-    Create ngForward demos
-        Just write a version of my demo app using ngForward???
-
     Put together a list of the Angular 2 decorators
     Work up example of class, property, parameter, and method decorators
     Work up example of metadata API
+    Work up demos of decorator library
 
     Put together slides
     Write up notes for demos
 
+
+
+
+    Create ngForward demos
+        Just write a version of my demo app using ngForward???
+        Or create a small, simple demo???
+
     Read Angular 2 documentation
-
-
-
-
-## Browser Support
-
-Do the TypeScript decorators work in all browsers?
-    Any browser that supports the Object.defineProperty and Object.getOwnPropertyDescriptor methods
-    Show breakdown for both from MDN
-
-## TypeScript Compiler Options
-
-```
-"compilerOptions": {
-    "target": "es5",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": false
-}
-```
-
-Do you have to have the experimental decorators option enabled???
-What does emitting the decorator metadata actually do???
-
-
-
 
 
 
@@ -69,10 +48,6 @@ General Presentation Notes
     Using ngForward in Angular 1.x
         Build out the same example
     Use my Civil War application for the A1 and A2 examples
-
-
-
-
 
 
 

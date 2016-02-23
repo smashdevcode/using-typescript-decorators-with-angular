@@ -98,3 +98,23 @@ console.log('Type: %s', Reflect.getMetadata('design:type', v, k));
 console.log('Param Types: %s', Reflect.getMetadata('design:paramtypes', v, k));
 console.log('Return Type: %s', Reflect.getMetadata('design:returntype', v, k));
 ```
+
+## Browser Support
+
+Do TypeScript decorators work in all browsers?
+
+* Any browser that supports the Object.defineProperty and Object.getOwnPropertyDescriptor methods
+* Chrome 5, Firefox 4, IE 9, Opera 12, Safari 5.1
+
+## TypeScript Compiler Options
+
+```
+"compilerOptions": {
+    "target": "es5",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": false
+}
+```
+
+* Do you have to have the experimental decorators option enabled?
+ * Yes... or else you get a compiler warning :)
