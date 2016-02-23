@@ -5,16 +5,20 @@ TODO
 
 
 
-    Put together a list of the Angular 2 decorators
+
+    Work up example of class decorator
 
 
 
 
-
-    Work up example of class, property, parameter, and method decorators
     Work up example of metadata API
     Work up demos of decorator library
     Work up JS Object demos
+
+
+
+
+
 
     Put together slides
     Write up notes for demos

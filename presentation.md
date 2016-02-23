@@ -132,3 +132,18 @@ Do TypeScript decorators work in all browsers?
 ## Decorator Library Demo
 
 ## Angular 1.x Demo
+
+## Angular 2 Decorators
+
+### angular2/core
+
+* Component - Specifies when a component is instantiated, and which properties and hostListeners it binds to
+* Directive - Used to configure directives
+* Injectable - Marks a class as available to Injector for creation
+* Pipe - Declares reusable pipe function
+* View - Specifies the HTML template to use, and lists the directives that are active within the template
+
+### angular2/router
+
+* CanActivate - Defines route lifecycle hook CanActivate, which is called by the router to determine if a component can be instantiated as part of a navigation
+* RouteConfig - Defines routes for a given component

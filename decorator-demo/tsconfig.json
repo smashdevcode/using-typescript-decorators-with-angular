@@ -18,6 +18,7 @@
         "!./typings/main/**/*.d.ts"
     ],
     "files": [
+        "./app/main.ts",
         "./app/method-decorator-log.ts",
         "./app/method-decorator.ts"
     ],
