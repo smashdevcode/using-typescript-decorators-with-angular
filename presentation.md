@@ -1,6 +1,12 @@
 
 # Using TypeScript Decorators with Angular
 
+## Decorators
+
+* C#, Java, Python, and more all have support for declarative programming
+* C# just supports associating metadata with class and class members
+* JavaScript decorators not only provide metadata but also allow you to modify classes and properties at design time
+
 ## AtScript Annotations
 
 * Google proposed superset of JavaScript
@@ -34,7 +40,7 @@ function decoratorExpression(target) {
 }
 ```
 
-A decorator is just a function that gives you access to the target that needs to be decorated
+A decorator is just a function that gives you access to the target that needs to be decorated.
 
 ## Decorator Types
 
@@ -51,17 +57,60 @@ A decorator is just a function that gives you access to the target that needs to
  * Accepts three arguments: `target` (prototype), `name` (method name), and `index` (index of the parameter being decorated)
  * Returns a property descriptor that is used to update the original property definition
 
-## Object.defineProperty
+## Browser Support
+
+Do TypeScript decorators work in all browsers?
+
+* No browsers natively support decorators at this point in time
+* So you need to transpile to ES5
+* Any browser that supports the Object.defineProperty and Object.getOwnPropertyDescriptor methods
+* Chrome 5, Firefox 4, IE 9, Opera 12, Safari 5.1
+
+## TypeScript Compiler Options
+
+```
+"compilerOptions": {
+    "target": "es5",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": false
+}
+```
+
+* Do you have to have the experimental decorators option enabled?
+* Yes... or else you get a compiler warning :)
+
+## Demos
+
+### Decorator Demo
+
+* Class Decorator
+ * Accepts one argument: `target` (constructor function)
+ * Returns a constructor function that replaces original constructor function
+* Method Decorator
+ * Accepts three arguments: `target` (prototype), `key` (property name), and `value` (property descriptor for the given property)
+ * Returns a property descriptor that is used to update the original property definition
+* Property Decorator
+ * Accepts two arguments: `target` (prototype) and `key` (property name)
+ * Doesn't return a value
+* Parameter Decorator
+ * Accepts three arguments: `target` (prototype), `name` (method name), and `index` (index of the parameter being decorated)
+ * Returns a property descriptor that is used to update the original property definition
+
+### Code Analysis Demo
+
+### JavaScript Object Demo
+
+#### Object.defineProperty
 
 Used to create object properties.
 
-### Parameters
+##### Parameters
 
 * obj - The object on which to define the property.
 * prop - The name of the property to be defined or modified.
 * descriptor - The descriptor for the property being defined or modified.
 
-## Object.getOwnPropertyDescriptor
+#### Object.getOwnPropertyDescriptor
 
 Used to get a property descriptor.
 
@@ -74,31 +123,14 @@ A descriptor must be one of these two flavors; it cannot be both.
 
 Descriptors have the following keys:
 
-configurable (both) - True if and only if the type of this property descriptor may be changed and if the property may be deleted from the corresponding object.
-Defaults to false.
+* `configurable` (both) - True if and only if the type of this property descriptor may be changed and if the property may be deleted from the corresponding object. Defaults to false.
+* `enumerable` (both) - True if and only if this property shows up during enumeration of the properties on the corresponding object. Defaults to false.
+* `value` (data descriptor) - The value associated with the property. Can be any valid JavaScript value (number, object, function, etc). Defaults to undefined.
+* `writable` (data descriptor) - True if and only if the value associated with the property may be changed with an assignment operator. Defaults to false.
+* `get` (accessor descriptor) - A function which serves as a getter for the property, or undefined if there is no getter. The function return will be used as the value of property. Defaults to undefined.
+* `set` (accessor descriptor) - A function which serves as a setter for the property, or undefined if there is no setter. The function will receive as only argument the new value being assigned to the property. Defaults to undefined.
 
-enumerable (both) - True if and only if this property shows up during enumeration of the properties on the corresponding object.
-Defaults to false.
-
-value (data descriptor) - The value associated with the property. Can be any valid JavaScript value (number, object, function, etc).
-Defaults to undefined.
-
-writable (data descriptor) - True if and only if the value associated with the property may be changed with an assignment operator.
-Defaults to false.
-
-get (accessor descriptor) - A function which serves as a getter for the property, or undefined if there is no getter. The function return will be used as the value of property.
-Defaults to undefined.
-
-set (accessor descriptor) - A function which serves as a setter for the property, or undefined if there is no setter. The function will receive as only argument the new value being assigned to the property.
-Defaults to undefined.
-
-## Decorator Libraries
-
-Great general library of decorators.
-
-[https://github.com/jayphelps/core-decorators.js](https://github.com/jayphelps/core-decorators.js)
-
-## Metadata Reflection API
+### Metadata Demo
 
 You need a polyfill in order to access the metadata that TypeScript emits.
 
@@ -114,43 +146,15 @@ console.log('Param Types: %s', Reflect.getMetadata('design:paramtypes', v, k));
 console.log('Return Type: %s', Reflect.getMetadata('design:returntype', v, k));
 ```
 
-## Browser Support
+### Decorator Library Demo
 
-Do TypeScript decorators work in all browsers?
+Great general library of decorators.
 
-* Any browser that supports the Object.defineProperty and Object.getOwnPropertyDescriptor methods
-* Chrome 5, Firefox 4, IE 9, Opera 12, Safari 5.1
+[https://github.com/jayphelps/core-decorators.js](https://github.com/jayphelps/core-decorators.js)
 
-## TypeScript Compiler Options
+### Angular 2 Demo
 
-```
-"compilerOptions": {
-    "target": "es5",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": false
-}
-```
-
-* Do you have to have the experimental decorators option enabled?
- * Yes... or else you get a compiler warning :)
-
-## Decorator Demo
-
-## Code Analysis Demo
-
-## JavaScript Object Demo
-
-## Metadata Demo
-
-## Angular 2 Demo
-
-## Decorator Library Demo
-
-## Angular 1.x Demo
-
-## Angular 2 Decorators
-
-### angular2/core
+#### angular2/core
 
 * Component - Specifies when a component is instantiated, and which properties and hostListeners it binds to
 * Directive - Used to configure directives
@@ -158,7 +162,22 @@ Do TypeScript decorators work in all browsers?
 * Pipe - Declares reusable pipe function
 * View - Specifies the HTML template to use, and lists the directives that are active within the template
 
-### angular2/router
+#### angular2/router
 
 * CanActivate - Defines route lifecycle hook CanActivate, which is called by the router to determine if a component can be instantiated as part of a navigation
 * RouteConfig - Defines routes for a given component
+
+### Angular 1.x Demo
+
+ngForward is an Angular 1.x library that attempts to bring an Angular 2 like development experience to Angular 1.x.
+
+[https://github.com/ngUpgraders/ng-forward/blob/master/Walkthrough.md](https://github.com/ngUpgraders/ng-forward/blob/master/Walkthrough.md)
+
+## Wrap Up
+
+* All of the code that I showed you tonight is available on GitHub
+* The repo also contains my presentation materials and a list of resources
+
+James Churchill
+Twitter: @SmashDev
+GitHub: github.com/smashdevcode

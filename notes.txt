@@ -6,40 +6,34 @@ TODO
 
 
 
-    Work up JS Object demos
+Put together slides
 
 
 
 
-    Put together slides
-    Write up notes for demos
+Write up notes for demos
 
-    Create ngForward demos
-        Just write a version of my demo app using ngForward???
-        Or create a small, simple demo???
-
-
-
-
-
-
-General Presentation Notes
-    The landscape of declarative programming
-        C#, Java, Python
-    What are decorators?
-        Create simple example
-        How do they work?
-        What can we do with them?
-        Logging, memoizing, readonly, controller, inject
-    Examples of decorators in Angular 2
-        Start with starter files and add a component and service
-    Using ngForward in Angular 1.x
-        Build out the same example
-    Use my Civil War application for the A1 and A2 examples
+Demos
+    Simple class and method decorators
+    Just initially log statements
+    Show the arguments that are passed
+    Walk through generated code?
+    What can we do with property descriptors?
+    Show property descriptor demos
+    Setup "readonly" decorator
+    Setup Angular 1.x "controller" decorator
+        Registers controller
+        Adds "$inject" static property
+    Show Angular 2 demo
 
 
 
 
+
+
+Create ngForward demos
+    Just write a version of my demo app using ngForward???
+    Or create a small, simple demo???
 
 Look for libraries that make Angular 1.x controllers look more like Angular 2 components
     ngDecorate
