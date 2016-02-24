@@ -1,4 +1,6 @@
 
+// Class Decorator
+
 export function logClass(target: any) {
     // save a reference to the original constructor
     var original = target;
@@ -24,6 +26,8 @@ export function logClass(target: any) {
     // return new constructor (will override original)
     return f;
 }
+
+// Class Decorator with Args
 
 export function logClassWithArgs(filter: { arg: string }) {
     return (target: any) => {
@@ -53,6 +57,8 @@ export function logClassWithArgs(filter: { arg: string }) {
     }
 }
 
+// Property Decorator
+
 export function logProperty(target: Object, propertyKey: string) {
     // property value
     var _val = target[propertyKey];
@@ -80,6 +86,8 @@ export function logProperty(target: Object, propertyKey: string) {
         });
     }
 }
+
+// Method Decorator
 
 // interface TypedPropertyDescriptor<T> {
 //     enumerable?: boolean;

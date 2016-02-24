@@ -98,17 +98,27 @@ Do TypeScript decorators work in all browsers?
 
 ### Code Analysis Demo
 
+* Walk through the generated code
+
+#### Metadata Demo
+
+You need a polyfill in order to access the metadata that TypeScript emits.
+
+```
+npm install reflect-metadata
+```
+
+Then you can get the metadata like this:
+
+```
+console.log('Type: %s', Reflect.getMetadata('design:type', v, k));
+console.log('Param Types: %s', Reflect.getMetadata('design:paramtypes', v, k));
+console.log('Return Type: %s', Reflect.getMetadata('design:returntype', v, k));
+```
+
 ### JavaScript Object Demo
 
-#### Object.defineProperty
-
-Used to create object properties.
-
-##### Parameters
-
-* obj - The object on which to define the property.
-* prop - The name of the property to be defined or modified.
-* descriptor - The descriptor for the property being defined or modified.
+* Show how the `Object.getOwnPropertyDescriptor` and `Object.defineProperty` work
 
 #### Object.getOwnPropertyDescriptor
 
@@ -130,21 +140,15 @@ Descriptors have the following keys:
 * `get` (accessor descriptor) - A function which serves as a getter for the property, or undefined if there is no getter. The function return will be used as the value of property. Defaults to undefined.
 * `set` (accessor descriptor) - A function which serves as a setter for the property, or undefined if there is no setter. The function will receive as only argument the new value being assigned to the property. Defaults to undefined.
 
-### Metadata Demo
+#### Object.defineProperty
 
-You need a polyfill in order to access the metadata that TypeScript emits.
+Used to create object properties.
 
-```
-npm install reflect-metadata
-```
+##### Parameters
 
-Then you can get the metadata like this:
-
-```
-console.log('Type: %s', Reflect.getMetadata('design:type', v, k));
-console.log('Param Types: %s', Reflect.getMetadata('design:paramtypes', v, k));
-console.log('Return Type: %s', Reflect.getMetadata('design:returntype', v, k));
-```
+* obj - The object on which to define the property.
+* prop - The name of the property to be defined or modified.
+* descriptor - The descriptor for the property being defined or modified.
 
 ### Decorator Library Demo
 

@@ -1,25 +1,15 @@
 
-
-
 TODO
-
-
-
-
-Put together slides
-
-
-
 
 Write up notes for demos
 
 Demos
     Simple class and method decorators
-    Just initially log statements
-    Show the arguments that are passed
+        Just initially log statements
+        Show the arguments that are passed
     Walk through generated code?
     What can we do with property descriptors?
-    Show property descriptor demos
+        Show property descriptor demos
     Setup "readonly" decorator
     Setup Angular 1.x "controller" decorator
         Registers controller
